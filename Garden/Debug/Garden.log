@@ -1,0 +1,9 @@
+﻿  Appointment.cpp
+  GardenManager.cpp
+  Plant.cpp
+  Race.cpp
+C:\Users\Дима\Documents\GitHub\Garden\Garden\source\Race.cpp(38,3): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+C:\Users\Дима\Documents\GitHub\Garden\Garden\source\Race.cpp(58,4): warning C4834: отмена возвращаемого значения функции с атрибутом "nodiscard"
+  Start.cpp
+  Создание кода...
+  Garden.vcxproj -> C:\Users\Дима\Documents\GitHub\Garden\Debug\Garden.exe
