@@ -30,6 +30,8 @@ public:
 	//работа со статик переменной
 	static int GetCount();
 	static void DecCount();
+	static void IncCount();
+	static void SetCount(int count);
 
 	//конструкторы
 	Plant(PlantFamily _family, PlantSpecies _specie, string _name, Appointment _appointment, Race race

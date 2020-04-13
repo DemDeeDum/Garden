@@ -1,4 +1,5 @@
 #include "headers/GardenManager.h"
+#include "headers/Input.h"
 #include <ctime>
 
 int main()
@@ -8,6 +9,5 @@ int main()
 
 	GardenManager manager;
 	manager.Menu(MAIN);
-
 	return 0;
 }

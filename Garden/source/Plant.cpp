@@ -5,9 +5,20 @@
 int Plant::count = 0;
 
 //статик методы
+void Plant::SetCount(int new_count)
+{
+	if (new_count > 0)
+		count = new_count;
+}
+
 int Plant::GetCount()
 {
 	return count;
+}
+
+void Plant::IncCount()
+{
+	count++;
 }
 
 void Plant::DecCount()

@@ -140,6 +140,7 @@
   <ItemGroup>
     <ClCompile Include="source\Appointment.cpp" />
     <ClCompile Include="source\GardenManager.cpp" />
+    <ClCompile Include="source\Input.cpp" />
     <ClCompile Include="source\Plant.cpp" />
     <ClCompile Include="source\Race.cpp" />
     <ClCompile Include="source\Start.cpp" />
@@ -147,6 +148,7 @@
   <ItemGroup>
     <ClInclude Include="source\headers\Appointment.h" />
     <ClInclude Include="source\headers\GardenManager.h" />
+    <ClInclude Include="source\headers\Input.h" />
     <ClInclude Include="source\headers\Plant.h" />
     <ClInclude Include="source\headers\Race.h" />
   </ItemGroup>

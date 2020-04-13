@@ -16,7 +16,7 @@ private:
 	string name;
 	RaceType type;
 	vector<Plant*> plants;
-	void type_setter();
+	void TypeSetter();
 public:
 	//конструкторы
 	Race(string name);
@@ -31,7 +31,8 @@ public:
 	void SetName(string name);
 
 	//изменения списка растений
-	string add_plant(Plant* plant);
-	string remove_plant(string plant_name);
+	string AddPlants(vector<Plant*> plants);
+	string AddPlant(Plant* plant);
+	string RemovePlant(string plant_name);
 };
 

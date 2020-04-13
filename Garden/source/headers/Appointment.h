@@ -8,7 +8,7 @@ struct Appointment
 	//поля
 	bool is_oxygen_maker;  //хорошо фильтрует воздух
 	bool has_therapeutic_benefit;  //используется в медицине
-	bool has_food_value;  //использует как еда
+	bool has_food_value;  //используется как еда
 	bool has_aesthetic_value;  //имеет эстетическую ценность
 	bool is_endangered_specie;  //исчезающий вид
 	string additional_info;  //дополнительная информация

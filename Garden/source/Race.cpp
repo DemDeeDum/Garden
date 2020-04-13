@@ -6,17 +6,17 @@ Race::Race	(string name)
 	:
 	name(name)
 {
-	type_setter();
+	TypeSetter();
 }
 
 Race::Race()
 	:
 	name("unnammed")
 {
-	type_setter();
+	TypeSetter();
 }
 
-void Race::type_setter()
+void Race::TypeSetter()
 {
 	if (plants.size() == 0)
 		type = RaceType::EMPTY;
@@ -28,7 +28,15 @@ void Race::type_setter()
 		type = RaceType::POLYTYPE;
 }
 
-string Race::add_plant(Plant* plant)
+string Race::AddPlants(vector<Plant*> plants)
+{
+	string res = "";
+	for (auto plant : plants)
+		res += AddPlant(plant);
+	return res;
+}
+
+string Race::AddPlant(Plant* plant)
 {
 	if (plant == nullptr)
 		return "Ѕыл передан указатель растени€ с нулевым значением";
@@ -42,11 +50,11 @@ string Race::add_plant(Plant* plant)
 	{
 		plants.push_back(plant);
 	}
-	type_setter();
+	TypeSetter();
 	return "–асстению " + plant->GetName() + " успешно присвоен род " + name + " !";
 }
 
-string Race::remove_plant(string plant_name)
+string Race::RemovePlant(string plant_name)
 {
 	if (plant_name == "")
 		return "Ѕыло передано пустое им€ растени€";
@@ -60,7 +68,7 @@ string Race::remove_plant(string plant_name)
 		}
 	}
 
-	type_setter();
+	TypeSetter();
 	return "Ќе удалось найти растение " + plant_name + " в роду " + name;
 }
 
