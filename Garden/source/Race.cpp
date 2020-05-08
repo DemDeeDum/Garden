@@ -38,8 +38,6 @@ string Race::AddPlants(vector<Plant*> plants)
 
 string Race::AddPlant(Plant* plant)
 {
-	if (plant == nullptr)
-		return "Был передан указатель растения с нулевым значением";
 
 	try
 	{												 //если вектор не содержит данное значение 
