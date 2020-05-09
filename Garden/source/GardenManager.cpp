@@ -3,13 +3,15 @@
 #include "headers/Race.h"
 #include "headers/Plant.h"
 
+
+//пункт назад
 #define BACK 9
 
 //пункты меню 
 #define ADD_PLANT 1
 #define ADD_RACE 2
-
-
+#define PRINT_PLANTS 3
+#define PRINT_RACES 4
 
 
 //конструктор
@@ -73,6 +75,12 @@ void GardenManager::Menu()
         case ADD_RACE:
             CreateRace();
             break;
+        case PRINT_PLANTS:
+            PrintPlants(SearchPlants());
+            break;
+        case PRINT_RACES:
+            PrintRaces(SearchRaces());
+            break;
         case BACK:
             return;
         default:
@@ -84,7 +92,7 @@ void GardenManager::Menu()
 
 
 
-//меню управления растениями
+//управление растениями
 void GardenManager::CreatePlant()
 {
     Plant newPlant;
@@ -444,7 +452,7 @@ vector<PlantSpecies> GardenManager::SetCompatibles()
             {
                 if (choice[0] == ' ')
                     choice = choice.substr(1, strlen(choice.c_str()) - 1);
-                species.push_back(PlantSpecies(atoi(choice.c_str())));
+                species.push_back(PlantSpecies(atoi(choice.c_str())- 1));
             }
             return species;
         }
@@ -488,8 +496,46 @@ void GardenManager::SavePlant(Plant newPlant)
     this->message = "Растение " + newPlant.GetName() + " успешно создано или изменено!";
 }
 
+void GardenManager::PrintPlants(vector<Plant> plants)
+{
+    for (auto plant : plants)
+    {
+        cout << "#####################################################################\n";
+        cout << "Название: " << plant.GetName() << endl;
+        cout << "Род: " << (plant.GetRace() == nullptr ? "No race" : plant.GetRace()->GetName()) << endl;
+        cout << "Семейство: " << Plant::GetFamilyStringValue(plant.GetFamily()) << endl;
+        cout << "Вид: " << Plant::GetSpecieStringValue(plant.GetSpecie()) << endl;
+        cout << "Количество в наличии: " << plant.GetCount() << endl;
+        cout << "Является эффективным очистителем воздуха : "
+            << (plant.GetAppointment().is_oxygen_maker ? "Да" : "Нет") << endl;
+        cout << "Используется в медицине : "
+            << (plant.GetAppointment().has_therapeutic_benefit ? "Да" : "Нет") << endl;
+        cout << "Используется в качестве пищи : "
+            << (plant.GetAppointment().has_food_value ? "Да" : "Нет") << endl;
+        cout << "Является предметов эстетики : "
+            << (plant.GetAppointment().has_aesthetic_value ? "Да" : "Нет") << endl;
+        cout << "Исчезающий вид : "
+            << (plant.GetAppointment().is_endangered_specie ? "Да" : "Нет") << endl;
+        cout << "Дополнительная информация : " << plant.GetAppointment().additional_info << endl;
+        cout << "Совместимые виды : ";
+        if (plant.GetCompatible().size() > 0)
+        {
+            for (auto specie : plant.GetCompatible())
+                cout << Plant::GetSpecieStringValue(specie) << ", ";
+            cout << "\b\b" << "  ";
+        }
+        else
+        {
+            cout << "Нет";
+        }
+        cout << endl;
+    }
+    cout << "------------------------------Нажмите ентер------------------------------";
+    cin.get();
+}
 
-//меню управления родами
+
+//управление родами
 void GardenManager::CreateRace()
 {
     Race newRace;
@@ -675,6 +721,28 @@ void GardenManager::AddingPlantsToRace(Race* newRace)
         }
         return;
     }
+}
+
+void GardenManager::PrintRaces(vector<Race> races) 
+{
+    for (auto race : races)
+    {
+        cout << "#####################################################################\n";
+        cout << "Название: " << race.GetName() << endl;
+        cout << "Растения: ";
+        if (race.GetPlants().size() != 0)
+        {
+            for (auto plant : race.GetPlants())
+                cout << plant->GetName() << " (" << Plant::GetFamilyStringValue(plant->GetFamily()) <<
+                ", " << Plant::GetSpecieStringValue(plant->GetSpecie()) << ") ,";
+            cout << "\b\b" << "  ";
+        }
+        else
+            cout << "Род не имеет растений";
+        cout << endl;
+    }
+    cout << "------------------------------Нажмите ентер------------------------------";
+    cin.get();
 }
 
 

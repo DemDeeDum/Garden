@@ -4,7 +4,6 @@
 #include <vector>
 #include <Windows.h>
 #include <fstream>
-#include <algorithm>
 
 //menu_id
 #define MAIN 9
@@ -45,21 +44,24 @@ private:
 	Appointment CreateAppointment();
 	int SetPlantCount();
 	vector<PlantSpecies> SetCompatibles();
-	void SavePlant(Plant newPlant);
+	void PrintPlants(vector<Plant>);
+
 
 	//методы родов
-	void SaveRace(Race newRace);
 	void AddingPlantsToRace(Race* newRace);
 	void CreateRace(); //создать род
 	string CreateRaceName(); //создать имя рода
+	void PrintRaces(vector<Race>);
 
 	//подргузка с файлов
 	vector<Plant> SearchPlants();
 	Plant GetPlant(string name, Race * owner);
 	Plant CreatePlantFromFile(vector<string> values, Race * owner);
+	void SavePlant(Plant newPlant);
 	vector<Race> SearchRaces();
 	Race GetRace(string name, Plant * owner);
 	Race CreateRaceFromFile(vector<string>values, Plant* owner);
+	void SaveRace(Race newRace);
 public:
 	//конструкторы
 	GardenManager(); // конструктор по умолчанию( без параметров)

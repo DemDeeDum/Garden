@@ -1,9 +1,7 @@
 ﻿  GardenManager.cpp
 C:\Users\Дима\Documents\GitHub\Garden\Garden\source\headers\Appointment.h(7,1): warning C4099: Appointment: имя типа, ранее отображенное с помощью "class", теперь отображено с помощью "struct"
 C:\Users\Дима\Documents\GitHub\Garden\Garden\source\headers\Appointment.h(6): message : см. объявление "Appointment"
-C:\Users\Дима\Documents\GitHub\Garden\Garden\source\GardenManager.cpp(270,27): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Дима\Documents\GitHub\Garden\Garden\source\GardenManager.cpp(284,45): warning C4018: <=: несоответствие типов со знаком и без знака
-C:\Users\Дима\Documents\GitHub\Garden\Garden\source\GardenManager.cpp(668,37): warning C4018: >: несоответствие типов со знаком и без знака
-  Start.cpp
-  Создание кода...
+C:\Users\Дима\Documents\GitHub\Garden\Garden\source\GardenManager.cpp(278,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Дима\Documents\GitHub\Garden\Garden\source\GardenManager.cpp(292,45): warning C4018: <=: несоответствие типов со знаком и без знака
+C:\Users\Дима\Documents\GitHub\Garden\Garden\source\GardenManager.cpp(715,37): warning C4018: >: несоответствие типов со знаком и без знака
   Garden.vcxproj -> C:\Users\Дима\Documents\GitHub\Garden\Debug\Garden.exe
