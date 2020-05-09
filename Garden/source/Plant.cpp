@@ -66,6 +66,11 @@ void Plant::SetName(string _name)
 		name = _name;
 }
 
+void Plant::SetCompatible(vector<PlantSpecies> _compatible_species)
+{
+	compatible_species = _compatible_species;
+}
+
 //геттеры
 Race* Plant::GetRace()
 {

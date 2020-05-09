@@ -31,7 +31,6 @@ public:
 	void SetName(string name);
 
 	//изменения списка растений
-	string AddPlants(vector<Plant*> plants);
 	string AddPlant(Plant* plant);
 	string RemovePlant(string plant_name);
 };

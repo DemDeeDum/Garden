@@ -10,6 +10,6 @@ int main()
 	CreateDirectory(L"data", NULL);
 
 	GardenManager manager;
-	manager.Menu(MAIN);
+	manager.Menu();
 	return 0;
 }

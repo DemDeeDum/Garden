@@ -28,26 +28,16 @@ void Race::TypeSetter()
 		type = RaceType::POLYTYPE;
 }
 
-string Race::AddPlants(vector<Plant*> plants)
-{
-	string res = "";
-	for (auto plant : plants)
-		res += AddPlant(plant);
-	return res;
-}
 
 string Race::AddPlant(Plant* plant)
 {
 
-	try
-	{												 //если вектор не содержит данное значение 
-		*find(plants.begin(), plants.end(), plant);  //то при раззадрессации вылетит исключение
-		return "–асстение " + plant->GetName() + " уже принадлежит к роду " + name;
-	}
-	catch (...)
-	{
-		plants.push_back(plant);
-	}
+	for(auto cur : plants)
+		if(cur->GetName() == plant->GetName())
+			return "–асстение " + plant->GetName() + " уже принадлежит к роду " + name;
+
+
+	plants.push_back(plant);
 	TypeSetter();
 	return "–асстению " + plant->GetName() + " успешно присвоен род " + name + " !";
 }

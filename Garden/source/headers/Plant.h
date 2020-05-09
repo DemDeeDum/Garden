@@ -49,6 +49,7 @@ public:
 	void SetFamily(PlantFamily _family);
 	void SetSpecie(PlantSpecies _specie);
 	void SetName(string _name);
+	void SetCompatible(vector<PlantSpecies> _compatible_species);
 
 	//геттеры
 	Race* GetRace();
